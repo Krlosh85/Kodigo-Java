@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificar tarjeta de credito</title>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <nav class="bg-blue">
+        <ul class="navbar-list">
+          <li><a href="#" onclick="volverInicio()">Verificar mi tarjeta</a></li>
+          <li><a> V 1.2.1</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section id="left" class="left-section bg-yellow ">
+          <img src="resources/logo.png" alt="Logo empresa" class="logo">
+          <h3>VCard</h3>
+          <p>En VCard somos una empresa de verificación de tarjetas de crédito y débito con más de 10 años de experiencia en el campo tecnológico. Especializados en VISA, Mastercard y American Express</p>
+          <p>Ingresa los digitos de tu tarjeta para verificar si esta tarjeta es completamente real.</p>
+          <h5>Certificada por Kodigo Academy.</h5>
+        </section>
+        <section id="rigth"class="rigth-section bg-gray ">
+          <img src="resources/tarjeta.png" alt="tarjeta" class="tarjeta">
+          <form action="" class="form">
+            <input type="text" name="tarjeta" id="tarjeta" class="text-box" autocomplete="off"> 
+            <input type="button" value="Verificar" class="button" onclick="verificarTarjeta()">
+          </form>
+        </section>
+        <section class="respuesta bg-gray hide" id="respuesta">
+          <img src="resources/tarjeta.png" alt="respuesta" class="img-respuesta" id="img-respuesta">
+          <h2 id="respuesta-tarjeta">El numero de tarjeta #####################1234 es una tarjeta Tipo</h2>
+          <h3>¿Quieres volver a verificar una tarjeta?</h3>
+          <input type="button" value="Volver al inicio" class="button" onclick="volverInicio()">
+        </section>
+      </main>
+      <footer class="bg-blue footer">
+        <h5> <a href="https://github.com/Krlosh85" target="_blank"> Creado por Carlos Herrera</a></h5>
+      </footer>
+
+      <script src="script.js"></script>
+  </body>
+</html>
