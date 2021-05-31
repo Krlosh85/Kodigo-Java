@@ -1,0 +1,6 @@
+Statistics at Kodigo:
+--------------------------------------------------------------------------
+The maximum grade is: 10.0
+The Minimum grade is: 5.0
+The average grade in Kodigo is: 8.333333333333334
+The most frequent grade is: 10.0, and it's repeated: 2
