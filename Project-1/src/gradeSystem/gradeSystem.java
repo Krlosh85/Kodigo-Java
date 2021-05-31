@@ -20,18 +20,18 @@ public class gradeSystem {
         grades();
     }
 
+    //Method used to type the grades and use each method
     private static void grades(){
         try{
-            //Insert the 20 students name and Grade
+            //Insert the n students name and Grade
             HashMap<String, Double> grades = new HashMap<String, Double>();
             Scanner scan = new Scanner(System.in);
 
             System.out.println("Welcome to the Kodigo's Grade System ");
             System.out.println("Instructions: insert the Name, then type the grade (Note: It can't be a grade above 10 and beneath 1).");
-            int students = 3;
+            int students = 5;
 
             double avg = 0;
-            int repeated;
 
             for (int i = 1; i <= students; i++){
                 String name;
@@ -58,9 +58,9 @@ public class gradeSystem {
                 avg += grade;
             }
 
-            //Statics and File module
-            //Task: ask what would be a better option: making all the statics module with different methods or using it the way it is now
-            System.out.println("Statics at Kodigo:");
+            //Statistics and File module
+            //Task: ask what would be a better option: making all the Statistics module with different methods or using it the way it is now
+            System.out.println("Statisticsat Kodigo:");
             System.out.println("--------------------------------------------------------------------------");
 
             //Create a file
@@ -70,21 +70,29 @@ public class gradeSystem {
             FileWriter fw = new FileWriter(file1);
             PrintWriter pw = new PrintWriter(fw);
 
-            pw.println("Statics at Kodigo:");
+            pw.println("Statistics at Kodigo:");
             pw.println("--------------------------------------------------------------------------");
             pw.println((maxValue(grades)));
             pw.println((minValue(grades)));
-            pw.println(("The average grade in Kodigo is: "+ (avg/students)));
-            System.out.println("The average grade in Kodigo is: "+ (avg/students));
+            pw.println(avgGrade(avg, students));
             pw.println((mode(grades)));
             pw.close();
 
         }catch (Exception ex){
-            System.out.println(ex);
+            System.out.println("Warning, Fatal Error");
         }
     }
 
-    //Statics module Methods
+    //Statistics module Methods
+
+    //Method to calculate the average grade
+    private static String avgGrade(double avg, int students){
+        double avgGrade = (avg/students);
+        System.out.println("The average grade in Kodigo is: "+String.valueOf(avgGrade));
+        return ("The average grade in Kodigo is: "+String.valueOf(avgGrade));
+    }
+
+    //Method to calculate the highest value
     private static String maxValue(HashMap<String, Double> grades){
         double max = 0.0;
         for (double i : grades.values()){
@@ -96,6 +104,7 @@ public class gradeSystem {
         return ("The maximum grade is: "+max);
     }
 
+    //Method to calculate the lowest value
     private static String minValue(HashMap<String, Double> grades){
         //Min, using the hashmap as an array
         Double[] values = grades.values().toArray(new Double[0]);
@@ -110,6 +119,7 @@ public class gradeSystem {
         return ("The Minimum grade is: "+min);
     }
 
+    //Method to calculate the mode of the grades
     private static String mode(HashMap<String, Double> grades){
         //Mode
         double mostRepeated = 0.0;
